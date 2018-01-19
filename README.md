@@ -22,7 +22,7 @@ sudo apt install python-pip -y
 sudo apt install python3-pip -y
 ```
 
-## Python Aliases
+## Python aliases
 Add this to your bash profile, i.e. `vi ~/.bashrc`
 ```
 alias python="python3"
