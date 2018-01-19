@@ -54,11 +54,11 @@ source /usr/local/bin/virtualenvwrapper.sh
 Source your bash profile, i.e. `source ~/.bashrc`
 
 ## Make virtualenvwrapper project
-For those of you not familiar with venvwrapper, the following command creates a venvwrapper project `django-two`; which means you have a project directory `~/django-two` and a venv for your project somewhere in `~/venvs`.
+For those of you not familiar with `virtualenvwrapper`, the following command creates a `venvwrapper` project `django-two`; which means you have a project directory `~/django-two` and a virtualenv for your project somewhere in `~/venvs`.
 ```
 mkproject django-two
 ```
-The following command cd's to the project directory and activates the venv for project `django-two`
+The following command `cd`'s to the project directory and activates the virtualenv for project `django-two`
 ```
 workon django-two
 ```
