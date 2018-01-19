@@ -99,6 +99,9 @@ Make sure to set inbound rules for your AWS instance security group. You should 
 python manage.py runserver 0.0.0.0:8000  
 ```
 
+## Add Allowed Hosts
+Add wildcard `'*'` to `ALLOWED_HOSTS` in `django_two/settings.py`
+
 ## Thanks to
 [KayEss@StackOverflow for AWS rules](https://stackoverflow.com/questions/9865621/connecting-to-ec2-django-development-server)
 
