@@ -91,16 +91,16 @@ git clone https://github.com/itsnamgyu/django-two.git
 # Lightweight Deployment
 Deploying your server with `python manage.py runserver`
 
-## AWS Rules
+## AWS rules
 Make sure to set inbound rules for your AWS instance security group. You should allow all connections for port 8000.
 
-## Specify 0.0.0.0:8000
+## Add allowed hosts
+Add wildcard `'*'` to `ALLOWED_HOSTS` in `django_two/settings.py`
+
+## Start server with  0.0.0.0:8000
 ```
 python manage.py runserver 0.0.0.0:8000  
 ```
-
-## Add Allowed Hosts
-Add wildcard `'*'` to `ALLOWED_HOSTS` in `django_two/settings.py`
 
 ## Thanks to
 [KayEss@StackOverflow for AWS rules](https://stackoverflow.com/questions/9865621/connecting-to-ec2-django-development-server)
