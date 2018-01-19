@@ -101,4 +101,5 @@ python manage.py runserver 0.0.0.0:8000
 
 ## Thanks to
 [KayEss@StackOverflow for AWS rules](https://stackoverflow.com/questions/9865621/connecting-to-ec2-django-development-server)
+
 [eezis@StackOverflow for 0.0.0.0:8000](https://stackoverflow.com/questions/9865621/connecting-to-ec2-django-development-server)
