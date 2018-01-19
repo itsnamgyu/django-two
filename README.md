@@ -72,6 +72,9 @@ Note that the `pip` command is aliased (TODO: is it technically alias?) to pip3 
 pip --version
 ```
 
+## Git Clone!
+`git clone` this repo into the project directory django-two
+
 ## Do the Django 2.0 tutorial!
 [Writing your first Django app](https://docs.djangoproject.com/en/2.0/intro/tutorial01/)
 
