@@ -73,7 +73,7 @@ pip --version
 ```
 
 ## Git Clone!
-Clone this repo into the project directory django-two
+Clone this repo into the project directory `~/django-two`
 ```
 git clone https://github.com/itsnamgyu/django-two.git
 ```
