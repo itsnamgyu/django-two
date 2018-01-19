@@ -96,6 +96,9 @@ Make sure to set inbound rules for your AWS instance security group. You should 
 
 ## Add allowed hosts
 Add wildcard `'*'` to `ALLOWED_HOSTS` in `django_two/settings.py`
+```
+ALLOWED_HOSTS = ['*']
+```
 
 ## Start server with  0.0.0.0:8000
 ```
