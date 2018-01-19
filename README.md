@@ -63,7 +63,7 @@ The following command `cd`'s to the project directory and activates the virtuale
 workon django-two
 ```
 
-## Install Django
+## Install django
 ```
 pip install django
 ```
@@ -72,7 +72,7 @@ Note that the `pip` command is aliased (TODO: is it technically alias?) to pip3 
 pip --version
 ```
 
-## Git Clone!
+## Git clone!
 Clone this repo into the project directory `~/django-two`
 ```
 git clone https://github.com/itsnamgyu/django-two.git
