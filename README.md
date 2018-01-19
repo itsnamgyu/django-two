@@ -44,7 +44,7 @@ sudo pip3 install virtualenv
 ```
 sudo pip3 install virtualenvwrapper
 ```
-In your bash profile, i.e. `vi ~/.bashrc`
+Add this to your bash profile, i.e. `vi ~/.bashrc`
 ```
 export VIRTUALENVWRAPPER_PYTHON=`which python3`
 export WORKON_HOME="~/venvs"
