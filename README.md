@@ -82,8 +82,8 @@ git clone https://github.com/itsnamgyu/django-two.git
 [Writing your first Django app](https://docs.djangoproject.com/en/2.0/intro/tutorial01/)
 
 ## Thanks to
-[sudo apt update](https://www.rosehosting.com/blog/how-to-install-pip-on-ubuntu-16-04/)
+[Rose Hosting for sudo apt update](https://www.rosehosting.com/blog/how-to-install-pip-on-ubuntu-16-04/)
 
-[virualenvwrapper docs](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+[The Hitchhikers Guide to Python for virualenvwrapper](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 
-[virtualenvwrapper fix](https://stackoverflow.com/questions/11507186/python-virtualenv-no-module-named-virtualenvwrapper-hook-loader)
+[reubano@StackOverflow for virtualenvwrapper fix](https://stackoverflow.com/questions/11507186/python-virtualenv-no-module-named-virtualenvwrapper-hook-loader)
