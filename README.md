@@ -73,7 +73,10 @@ pip --version
 ```
 
 ## Git Clone!
-`git clone` this repo into the project directory django-two
+Clone this repo into the project directory django-two
+```
+git clone https://github.com/itsnamgyu/django-two.git
+```
 
 ## Do the Django 2.0 tutorial!
 [Writing your first Django app](https://docs.djangoproject.com/en/2.0/intro/tutorial01/)
