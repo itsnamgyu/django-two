@@ -87,3 +87,18 @@ git clone https://github.com/itsnamgyu/django-two.git
 [The Hitchhikers Guide to Python for virualenvwrapper](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 
 [reubano@StackOverflow for virtualenvwrapper fix](https://stackoverflow.com/questions/11507186/python-virtualenv-no-module-named-virtualenvwrapper-hook-loader)
+
+# Lightweight Deployment
+Deploying your server with `python manage.py runserver`
+
+## AWS Rules
+Make sure to set inbound rules for your AWS instance security group. You should allow all connections for port 8000.
+
+## Specify 0.0.0.0:8000
+```
+python manage.py runserver 0.0.0.0:8000  
+```
+
+## Thanks to
+[KayEss@StackOverflow for AWS rules](https://stackoverflow.com/questions/9865621/connecting-to-ec2-django-development-server)
+[eezis@StackOverflow for 0.0.0.0:8000](https://stackoverflow.com/questions/9865621/connecting-to-ec2-django-development-server)
