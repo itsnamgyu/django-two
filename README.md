@@ -22,7 +22,7 @@ sudo apt install python-pip -y
 sudo apt install python3-pip -y
 ```
 
-## Python Aliases
+## Python aliases
 Add this to your bash profile, i.e. `vi ~/.bashrc`
 ```
 alias python="python3"
@@ -44,7 +44,7 @@ sudo pip3 install virtualenv
 ```
 sudo pip3 install virtualenvwrapper
 ```
-In your bash profile, i.e. `vi ~/.bashrc`
+Add this to your bash profile, i.e. `vi ~/.bashrc`
 ```
 export VIRTUALENVWRAPPER_PYTHON=`which python3`
 export WORKON_HOME="~/venvs"
@@ -54,16 +54,16 @@ source /usr/local/bin/virtualenvwrapper.sh
 Source your bash profile, i.e. `source ~/.bashrc`
 
 ## Make virtualenvwrapper project
-For those of you not familiar with venvwrapper, the following command creates a venvwrapper project `django-two`; creating the project directory django-two and a venv in ~/venvs.
+For those of you not familiar with `virtualenvwrapper`, the following command creates a `venvwrapper` project `django-two`; which means you have a project directory `~/django-two` and a virtualenv for your project somewhere in `~/venvs`.
 ```
 mkproject django-two
 ```
-The following command cd's to the project directory and activates the venv for project `django-two`
+The following command `cd`'s to the project directory and activates the virtualenv for project `django-two`
 ```
 workon django-two
 ```
 
-## Install Django
+## Install django
 ```
 pip install django
 ```
@@ -72,10 +72,40 @@ Note that the `pip` command is aliased (TODO: is it technically alias?) to pip3 
 pip --version
 ```
 
+## Git clone!
+Clone this repo into the project directory `~/django-two`
+```
+git clone https://github.com/itsnamgyu/django-two.git
+```
+
 ## Do the Django 2.0 tutorial!
 [Writing your first Django app](https://docs.djangoproject.com/en/2.0/intro/tutorial01/)
 
 ## Thanks to
-[sudo apt update](https://www.rosehosting.com/blog/how-to-install-pip-on-ubuntu-16-04/)
-[virualenvwrapper docs](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
-[virtualenvwrapper fix](https://stackoverflow.com/questions/11507186/python-virtualenv-no-module-named-virtualenvwrapper-hook-loader)
+[Rose Hosting for sudo apt update](https://www.rosehosting.com/blog/how-to-install-pip-on-ubuntu-16-04/)
+
+[The Hitchhikers Guide to Python for virualenvwrapper](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+
+[reubano@StackOverflow for virtualenvwrapper fix](https://stackoverflow.com/questions/11507186/python-virtualenv-no-module-named-virtualenvwrapper-hook-loader)
+
+# Lightweight Deployment
+Deploying your server with `python manage.py runserver`
+
+## AWS rules
+Make sure to set inbound rules for your AWS instance security group. You should allow all connections for port 8000.
+
+## Add allowed hosts
+Add wildcard `'*'` to `ALLOWED_HOSTS` in `django_two/settings.py`
+```
+ALLOWED_HOSTS = ['*']
+```
+
+## Start server with  0.0.0.0:8000
+```
+python manage.py runserver 0.0.0.0:8000  
+```
+
+## Thanks to
+[KayEss@StackOverflow for AWS rules](https://stackoverflow.com/questions/9865621/connecting-to-ec2-django-development-server)
+
+[eezis@StackOverflow for 0.0.0.0:8000](https://stackoverflow.com/questions/9865621/connecting-to-ec2-django-development-server)
