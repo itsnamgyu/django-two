@@ -83,5 +83,7 @@ git clone https://github.com/itsnamgyu/django-two.git
 
 ## Thanks to
 [sudo apt update](https://www.rosehosting.com/blog/how-to-install-pip-on-ubuntu-16-04/)
+
 [virualenvwrapper docs](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+
 [virtualenvwrapper fix](https://stackoverflow.com/questions/11507186/python-virtualenv-no-module-named-virtualenvwrapper-hook-loader)
