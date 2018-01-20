@@ -16,9 +16,10 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 """
-BASE_DIR just finds the project path with ../../ (relative to settings.py)
+BASE_DIR just finds the project path with
+../../ (relative to settings.py)
 
-Note that the directory this python file is executed from is 
+Note that the directory this python file is executed from is
 ../ (relative to settings.py)
 
 with open("ho.txt", "w") as f:
@@ -40,7 +41,8 @@ with open("ho.txt", "w") as f:
 if "BIG_BIG_SECRET" in os.environ:
     SECRET_KEY = os.environ["BIG_BIG_SECRET"]
 else:
-    raise Exception("Make sure to set the environment BIG_BIG_SECRET to the Django SECRET_KEY")
+    raise Exception("Make sure to set the environment BIG_BIG_SECRET " +
+                    "to the Django SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -106,18 +108,19 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
+VALIDATION_BASE = 'django.contrib.auth.password_validation.'
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': VALIDATION_BASE + 'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': VALIDATION_BASE + 'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': VALIDATION_BASE + 'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': VALIDATION_BASE + 'NumericPasswordValidator',
     },
 ]
 
