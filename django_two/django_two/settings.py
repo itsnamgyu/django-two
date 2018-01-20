@@ -37,7 +37,10 @@ with open("ho.txt", "w") as f:
 
 
 # Load BIG BIG Secret Key
-import local_settings.py
+if "BIG_BIG_SECRET" in os.environ:
+    SECRET_KEY = os.environ["BIG_BIG_SECRET"]
+else:
+    raise Exception("Make sure to set the environment BIG_BIG_SECRET to the Django SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -122,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
