@@ -51,6 +51,8 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    # These are all apps some of which have their own models!
+    # That's why you need the initial migrate!
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
