@@ -81,6 +81,9 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
+        # Django Templates + APP_DIRS True tells Django to look at the
+        # templates directory within each app directory like
+        # polls/templates/polls/base.html
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
