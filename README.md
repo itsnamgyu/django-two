@@ -109,3 +109,22 @@ python manage.py runserver 0.0.0.0:8000
 [KayEss@StackOverflow for AWS rules](https://stackoverflow.com/questions/9865621/connecting-to-ec2-django-development-server)
 
 [eezis@StackOverflow for 0.0.0.0:8000](https://stackoverflow.com/questions/9865621/connecting-to-ec2-django-development-server)
+
+# The Thing With Migrations
+Relational databases use tables to manage their data. But if a _model_ (in Django or _table_ in the context of databases) changes, then the table has to be rebuilt! What do we deal with this? Do we just never change models? Or do we need to discard all previous data?
+
+That's where migrations come in! It basically migrates data from an existing model to an updated version of that model! Will dive into this later...
+
+Here is my theory for now
+
+## Make migrations
+This makes 'migrations' - instructions on how to update the old tables of data to fit the new model
+```
+python manage.py makemigrations
+```
+
+## Migrate
+This actually updates the old tables
+```
+python manage.py migrate
+```
