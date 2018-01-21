@@ -1,7 +1,7 @@
-<!-- Note that question_text is a model attribute, optained from a attribute lookup -->
+<!-- Note that this is an attribute lookup, just like when you do object.attribute in Python -->
+<!-- Django will actually try question[question_text], or dictionary lookup first -->
 <h1>{{ question.question_text }}</h1>
 <ul>
-	<!-- Meanwhile choice_set is a field, optained from a dictionary lookup -->
 	{% for choice in question.choice_set.all %}
 	    <li>{{ choice.choice_text }}</li>
 	{% endfor %}
