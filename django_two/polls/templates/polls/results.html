@@ -1,0 +1,10 @@
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+	{% for choice in question.choice_set.all %}
+	<li>
+		<p><b>Choice {{ forloop.counter }}. {{ choice.choice_text}}</b></p>
+		<p>{{ choice.votes }} vote{{ choice.votes|pluralize }}!</p>
+	</li>
+	{% endfor %}
+</ul>

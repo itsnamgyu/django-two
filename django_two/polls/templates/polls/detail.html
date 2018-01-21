@@ -1,8 +1,14 @@
 <!-- Note that this is an attribute lookup, just like when you do object.attribute in Python -->
 <!-- Django will actually try question[question_text], or dictionary lookup first -->
 <h1>{{ question.question_text }}</h1>
-<ul>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'polls:vote' question.id %}" method="post">
+	{% csrf_token %}
 	{% for choice in question.choice_set.all %}
-	    <li>{{ choice.choice_text }}</li>
+	<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+	<label for="choice{{ forloop.counter }}">{{forloop.counter }}. {{ choice.choice_text }}</label><br />
 	{% endfor %}
-</ul>
+	<input type="submit" value="Vote" />
+</form>
