@@ -61,11 +61,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # django.contrib.staticfiles tells Django to look at the
-    # static directory within each app directory like
-    # polls/static/polls/style.css
-    # Note that you don't need the inner polls directory but we have it
-    # to differenciate 'style.css' for different apps - like a namespace
+    # Allows django to find static files
     'django.contrib.staticfiles',
 ]
 
@@ -152,3 +148,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# This is default! We just added it to explicate
+STATICFILES_FINDERS = [
+    # FileSysFinder searches directories in STATICFILES_DIRS
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    # AppDirsFinder searches the 'static' directory within each app directory like
+    # polls/static/polls/style.css
+    # Note that you don't need the inner polls directory but we have it
+    # to differenciate 'style.css' for different apps - like a namespace
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
