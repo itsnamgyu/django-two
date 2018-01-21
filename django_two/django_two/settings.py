@@ -61,6 +61,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    # django.contrib.staticfiles tells Django to look at the
+    # static directory within each app directory like
+    # polls/static/polls/style.css
+    # Note that you don't need the inner polls directory but we have it
+    # to differenciate 'style.css' for different apps - like a namespace
     'django.contrib.staticfiles',
 ]
 
