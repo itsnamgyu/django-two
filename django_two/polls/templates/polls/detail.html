@@ -1,6 +1,10 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
 <!-- Note that this is an attribute lookup, just like when you do object.attribute in Python -->
 <!-- Django will actually try question[question_text], or dictionary lookup first -->
-<h1>{{ question.question_text }}</h1>
+<h1>Q. {{ question.question_text }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
@@ -10,5 +14,5 @@
 	<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
 	<label for="choice{{ forloop.counter }}">{{forloop.counter }}. {{ choice.choice_text }}</label><br />
 	{% endfor %}
-	<input type="submit" value="Vote" />
+	<input id="vote-button" type="submit" value="Vote" />
 </form>
