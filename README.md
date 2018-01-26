@@ -14,7 +14,7 @@ Tutorial documentation can be found in [the wiki](https://github.com/itsnamgyu/d
 
 # Installation
 
-Look at [this](#)
+For Ubuntu Server 16.04, look at [this](https://github.com/itsnamgyu/django-two/wiki/Environment-Setup-on-Ubuntu-Server). If you use macOS or Windows, you're outta luck.
 
 # License
 
