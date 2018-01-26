@@ -14,7 +14,7 @@ Tutorial documentation can be found in [the wiki](https://github.com/itsnamgyu/d
 
 # Installation
 
-Look at [this][#]
+Look at [this](#)
 
 # License
 
