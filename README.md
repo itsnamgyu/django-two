@@ -4,7 +4,7 @@ This is how we'll learn Django!
 
 - [x] Do the [Official Tutorial for Django](https://docs.djangoproject.com/en/2.0/intro/tutorial01/)
 - [x] Start a [mildly-cool web project](https://github.com/itsnamgyu/mogakco)
-- [ ] Think about the pre-requisites needed to implement the next mildy-cool feature
+- [ ] Think about the pre-requisites for the next mildy-cool feature
 - [ ] Do the official tutorial covering that pre-requisite on this repo
 - [ ] Over-document everything on this repo
 - [ ] Implement the mildy-cool feature on the mildly-cool project
