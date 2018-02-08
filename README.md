@@ -1,130 +1,41 @@
 # django-two
-Django 2.0 Tutorial etc.
 
-# Environment Setup
-Using _AWS Instance template Ubuntu Server 16.04.3 LTS_
+This is how we'll learn Django!
 
-## Update apt and (optionally) upgrade packages
-The AWS instance default apt is too old to find pip (TODO: is it technically 'too old'?). You need to update it.
-```
-sudo apt update
-sudo apt upgrade
-```
+- [x] Do the [Official Tutorial for Django](https://docs.djangoproject.com/en/2.0/intro/tutorial01/)
+- [x] Start a [mildly-cool web project](https://github.com/itsnamgyu/mogakco)
+- [ ] Think about the pre-requisites for the next mildy-cool feature
+- [ ] Do the official tutorial covering that pre-requisite on this repo
+- [ ] Over-document everything on this repo
+- [ ] Implement the mildy-cool feature on the mildly-cool project
+- [ ] Repeat
 
-## Install python2 and both pips
-Just to practice dealing with python version issues.
+Tutorial documentation can be found in [the wiki](https://github.com/itsnamgyu/django-two/wiki)
 
-The `-y` option automatically selects yes for prompts.
+# Installation
 
-```
-sudo apt install python2 -y
-sudo apt install python-pip -y
-sudo apt install python3-pip -y
-```
+For Ubuntu Server 16.04, look at [this](https://github.com/itsnamgyu/django-two/wiki/Environment-Setup-on-Ubuntu-Server). If you use macOS or Windows, you're outta luck.
 
-## Python aliases
-Add this to your bash profile, i.e. `vi ~/.bashrc`
-```
-alias python="python3"
-alias py="python"
-alias py2="python2"
-alias py3="python3"
-```
-## Update pip3
-```
-pip3 install --upgrade pip
-```
+# License
 
-## Install virtualenv
-```
-sudo pip3 install virtualenv
-```
+MIT License
 
-## Install virtualenvwrapper
-```
-sudo pip3 install virtualenvwrapper
-```
-Add this to your bash profile, i.e. `vi ~/.bashrc`
-```
-export VIRTUALENVWRAPPER_PYTHON=`which python3`
-export WORKON_HOME="~/venvs"
-export PROJECT_HOME=`echo ~/.`
-source /usr/local/bin/virtualenvwrapper.sh
-```
-Source your bash profile, i.e. `source ~/.bashrc`
+Copyright (c) 2018 Namgyu Ho
 
-## Make virtualenvwrapper project
-For those of you not familiar with `virtualenvwrapper`, the following command creates a `virtualenvwrapper` project `django-two`; which means you have a project directory `~/django-two` and a virtualenv for your project somewhere in `~/venvs`.
-```
-mkproject django-two
-```
-The following command `cd`'s to the project directory and activates the virtualenv for project `django-two`
-```
-workon django-two
-```
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## Install django
-```
-pip install django
-```
-Note that the `pip` command is aliased (TODO: is it technically alias?) to pip3 due to the venv. Try this:
-```
-pip --version
-```
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-## Git clone!
-Clone this repo into the project directory `~/django-two`
-```
-git clone https://github.com/itsnamgyu/django-two.git
-```
-
-## Do the Django 2.0 tutorial!
-[Writing your first Django app](https://docs.djangoproject.com/en/2.0/intro/tutorial01/)
-
-## Thanks to
-[Rose Hosting for sudo apt update](https://www.rosehosting.com/blog/how-to-install-pip-on-ubuntu-16-04/)
-
-[The Hitchhikers Guide to Python for virualenvwrapper](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
-
-[reubano@StackOverflow for virtualenvwrapper fix](https://stackoverflow.com/questions/11507186/python-virtualenv-no-module-named-virtualenvwrapper-hook-loader)
-
-# Lightweight Deployment
-Deploying your server with `python manage.py runserver`
-
-## AWS rules
-Make sure to set inbound rules for your AWS instance security group. You should allow all connections for port 8000.
-
-## Add allowed hosts
-Add wildcard `'*'` to `ALLOWED_HOSTS` in `django_two/settings.py`
-```
-ALLOWED_HOSTS = ['*']
-```
-
-## Start server with  0.0.0.0:8000
-```
-python manage.py runserver 0.0.0.0:8000  
-```
-
-## Thanks to
-[KayEss@StackOverflow for AWS rules](https://stackoverflow.com/questions/9865621/connecting-to-ec2-django-development-server)
-
-[eezis@StackOverflow for 0.0.0.0:8000](https://stackoverflow.com/questions/9865621/connecting-to-ec2-django-development-server)
-
-# The Thing With Migrations
-Relational databases use tables to manage their data. But if a _model_ (in Django or _table_ in the context of databases) changes, then the table has to be rebuilt! What do we deal with this? Do we just never change models? Or do we need to discard all previous data?
-
-That's where migrations come in! It basically migrates data from an existing model to an updated version of that model! Will dive into this later...
-
-Here is my theory for now
-
-## Make migrations
-This makes 'migrations' - instructions on how to update the old tables of data to fit the new model
-```
-python manage.py makemigrations
-```
-
-## Migrate
-This actually updates the old tables
-```
-python manage.py migrate
-```
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
