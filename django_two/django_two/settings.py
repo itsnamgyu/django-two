@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import logging
+import sys
+
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,19 +39,6 @@ with open("ho.txt", "w") as f:
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
-
-
-# Load BIG BIG Secret Key
-if "BIG_BIG_SECRET" in os.environ:
-    SECRET_KEY = os.environ["BIG_BIG_SECRET"]
-else:
-    raise Exception("Make sure to set the environment BIG_BIG_SECRET " +
-                    "to the Django SECRET_KEY")
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -153,9 +144,23 @@ STATIC_URL = '/static/'
 STATICFILES_FINDERS = [
     # FileSysFinder searches directories in STATICFILES_DIRS
     'django.contrib.staticfiles.finders.FileSystemFinder',
-    # AppDirsFinder searches the 'static' directory within each app directory like
-    # polls/static/polls/style.css
+    # AppDirsFinder searches the 'static' directory within each app directory
+    # like polls/static/polls/style.css
     # Note that you don't need the inner polls directory but we have it
     # to differenciate 'style.css' for different apps - like a namespace
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
+
+SECRET_KEY = None
+try:
+    from . import secret
+except ImportError:
+    raise Exception("Error importing secret.py from settings.py. " +
+                    "Inquire to itsnamgyu@gmail.com for secret file")
+
+if SECRET_KEY is None:
+    raise Exception("SECRET_KEY is not set. " +
+                    "Inquire to itsnamgyu@gmail.com for secret file")
+
+DEBUG = True
+ALLOWED_HOSTS = ['*']
