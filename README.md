@@ -10,7 +10,7 @@ This is how we'll learn Django!
 - [ ] Implement the mildy-cool feature on the mildly-cool project
 - [ ] Repeat
 
-Tutorial documentation can be found in [the wiki](https://github.com/itsnamgyu/django-two/wiki)
+**Tutorial documentation can be found in [the wiki](https://github.com/itsnamgyu/django-two/wiki)**
 
 # Installation
 
