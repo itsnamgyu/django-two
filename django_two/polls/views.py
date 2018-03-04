@@ -25,7 +25,7 @@ def index(request):
 
 
 def detail(request, question_id):
-    # Why doesn't the get function just through a 404?
+    # Why doesn't the get function just throw a 404?
     # Becuase that means the model function messes with the view - not pretty
     # >> Coupling of model and view layer
     # What are the potential harms of this coupling? Like, would the get
