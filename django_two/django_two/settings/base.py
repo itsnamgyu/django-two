@@ -13,18 +13,21 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 import logging
 import sys
+from django.core.exceptions import ImproperlyConfigured
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 """
+Note that __file__ refers to this python file.
+
 BASE_DIR just finds the project path with
-../../ (relative to settings.py)
+../../../ (relative to base.py)
 
 Note that the directory this python file is executed from is
-../ (relative to settings.py)
+../../ (relative to base.py)
 
 with open("ho.txt", "w") as f:
     f.write(__file__)
@@ -153,14 +156,20 @@ STATICFILES_FINDERS = [
 
 SECRET_KEY = None
 try:
-    from . import secret
+    from django_two.secret import SECRET_KEY
 except ImportError:
-    raise Exception("Error importing secret.py from settings.py. " +
+    raise ImproperlyConfigured("Error importing secret.py from settings.py. " +
                     "Inquire to itsnamgyu@gmail.com for secret file")
 
 if SECRET_KEY is None:
-    raise Exception("SECRET_KEY is not set. " +
+    raise ImproperlyConfigured("SECRET_KEY is not set. " +
                     "Inquire to itsnamgyu@gmail.com for secret file")
 
 DEBUG = True
 ALLOWED_HOSTS = ['*']
+
+# Modular settings: put symlink to local 
+try:
+    from django_two.settings.local import *
+except ImportError:
+    pass

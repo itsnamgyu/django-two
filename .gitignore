@@ -57,6 +57,7 @@ coverage.xml
 *.log
 db.sqlite3
 secret.py
+local.py
 
 # Flask stuff:
 instance/
